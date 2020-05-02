@@ -73,10 +73,10 @@ public class UserController {
     //'index.html' file is returned showing the landing page of the application and displaying all the images in the application
     @RequestMapping(value = "users/logout", method = RequestMethod.POST)
     public String logout(Model model, HttpSession session) {
-        //Complete the code
         session.invalidate();
-        List<Image> allImages = imageService.getAllImages();
-        model.addAttribute("images",allImages);
+
+        List<Image> images = imageService.getAllImages();
+        model.addAttribute("images", images);
         return "index";
     }
 }
